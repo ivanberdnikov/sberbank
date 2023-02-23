@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class PracticeFormPage {
+
     private final SelenideElement
             firstName = $("#firstName"),
             lastName = $("#lastName"),
@@ -31,6 +32,7 @@ public class PracticeFormPage {
 
     public PracticeFormPage selectGender(String value) {
         gender.$(byText(value)).click();
+
         return this;
     }
 
@@ -39,6 +41,7 @@ public class PracticeFormPage {
         stateCityWrapper.$(byText(value)).click();
         city.click();
         stateCityWrapper.$(byText(secondValue)).click();
+
         return this;
     }
 
@@ -49,16 +52,19 @@ public class PracticeFormPage {
 
     public PracticeFormPage selectHobbies(String value) {
         hobbies.$(byText(value)).click();
+
         return this;
     }
 
     public PracticeFormPage fillFirstName(String value) {
         firstName.setValue(value);
+
         return this;
     }
 
     public PracticeFormPage fillCurrentAddress(String value) {
         currentAddress.setValue(value);
+
         return this;
     }
 
@@ -69,21 +75,25 @@ public class PracticeFormPage {
 
     public PracticeFormPage fillEmail(String value) {
         email.setValue(value);
+
         return this;
     }
 
     public PracticeFormPage fillMobileNumber(String value) {
         mobileNumber.setValue(value);
+
         return this;
     }
 
     public PracticeFormPage uploadFile() {
-        uploadPicture.uploadFile(new File("src/test/java/ru/scbt/qa/tests/demoqa/data/selenide.png"));
+        uploadPicture.uploadFile(new File("src/test/java/com/demoqa/tests/data/Selenide.png"));
+
         return this;
     }
 
     public PracticeFormPage fillSubjects(String value) {
         subjects.setValue(value).sendKeys(Keys.ENTER);
+
         return this;
     }
 
@@ -92,6 +102,7 @@ public class PracticeFormPage {
         dateOfBirthMonth.selectOptionContainingText(month);
         dateOfBirthYear.selectOptionContainingText(year);
         dateOfBirthDay.$(byText(day)).click();
+
         return this;
     }
 }

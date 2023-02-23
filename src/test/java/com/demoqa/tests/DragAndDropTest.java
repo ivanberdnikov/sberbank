@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class DragAndDropTest {
+
     @Test
     public void dragAndDrop() {
         SelenideElement columnA = $("#column-a"), columnB = $("#column-b");

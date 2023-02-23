@@ -6,11 +6,12 @@ import org.junit.jupiter.api.Test;
 
 
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.zoom;
 
-public class PracticeFormTest {
+public class PracticeFormTest extends AbstractTest{
 
     @Test
-    public void fillPracticeForm() {
+    public void fillPracticeForm(){
         PracticeFormPage practiceFormPage = new PracticeFormPage();
         ResultTableComponent resultTableComponent = new ResultTableComponent();
         String firstName = "Сергей",
@@ -27,6 +28,7 @@ public class PracticeFormTest {
                 state = "NCR",
                 city = "Delhi";
         open("/automation-practice-form");
+        zoom(0.75);
         practiceFormPage.fillFirstName(firstName)
                 .fillLastName(lastName)
                 .fillEmail(email)
