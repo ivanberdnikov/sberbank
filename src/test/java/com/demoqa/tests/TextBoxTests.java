@@ -1,19 +1,24 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.TextBoxPage;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
+
+import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxTests extends AbstractTest {
 
     @Test
     void fillFormTest() {
-        String userName = "userName";
-        String userEmail = "userEmail@mail.ru";
-        String currentAddress = "currentAddress";
-        String permanentAddress = "permanentAddress";
+        Faker faker = new Faker();
+        String userName = faker.name().username();
+        String userEmail = userName + "@mail.ru";
+        String currentAddress = faker.address().fullAddress();
+        String permanentAddress = faker.address().secondaryAddress();
         TextBoxPage textBoxPage = new TextBoxPage();
-        textBoxPage.openTextBox()
-                .fillUserName(userName)
+        open("/text-box");
+        executeJavaScript("$('footer').remove();");
+        textBoxPage.fillUserName(userName)
                 .fillUserEmail(userEmail)
                 .fillCurrentAddress(currentAddress)
                 .fillPermanentAddress(permanentAddress)
