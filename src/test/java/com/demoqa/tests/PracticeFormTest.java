@@ -3,12 +3,14 @@ package com.demoqa.tests;
 import com.demoqa.components.ResultTableComponent;
 import com.demoqa.pages.PracticeFormPage;
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest extends AbstractTest{
 
+    @DisplayName("Тест на заполнение практической формы")
     @Test
     public void fillPracticeForm(){
         PracticeFormPage practiceFormPage = new PracticeFormPage();

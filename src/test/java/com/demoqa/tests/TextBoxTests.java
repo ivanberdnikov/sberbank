@@ -2,12 +2,14 @@ package com.demoqa.tests;
 
 import com.demoqa.pages.TextBoxPage;
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxTests extends AbstractTest {
 
+    @DisplayName("Тест на заполнение формы")
     @Test
     void fillFormTest() {
         Faker faker = new Faker();

@@ -2,6 +2,7 @@ package com.demoqa.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -9,6 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class DragAndDropTest {
 
+    @DisplayName("Тест драг энд дроп")
     @Test
     public void dragAndDrop() {
         SelenideElement columnA = $("#column-a"), columnB = $("#column-b");
