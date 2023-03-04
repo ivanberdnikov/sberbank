@@ -15,4 +15,13 @@ public class LanguageTest extends AbstractTest {
         MainPage mainPage = new MainPage();
         assertThat(mainPage.getFooterText()).contains("Россия, Москва, 117997, ул. Вавилова, 19");
     }
+
+    @Test
+    @DisplayName("Проверка смены языка на главной странице")
+    public void checkLanguageTest() {
+        open("");
+        MainPage mainPage = new MainPage();
+        mainPage.clickLanguage();
+        assertThat(mainPage.getLanguageText()).contains("РУС");
+    }
 }
